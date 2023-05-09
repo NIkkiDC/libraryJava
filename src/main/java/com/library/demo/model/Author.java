@@ -17,7 +17,7 @@ public class Author {
     @Column
     private String description;
 
-    @OneToMany(mappedBy = "bookType", orphanRemoval = true)
+    @OneToMany(mappedBy = "author", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Book> bookList;
 
