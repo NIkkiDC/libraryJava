@@ -1,6 +1,7 @@
 package com.library.demo.controller;
 
 import com.library.demo.exception.InformationExistException;
+import com.library.demo.exception.InformationNotFoundException;
 import com.library.demo.model.Author;
 import com.library.demo.repository.AuthorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,30 +29,47 @@ public class AuthorController {
     }
 
     @PostMapping(path = "/author/")
-    public Author createAuthor(@RequestBody Author authorObject){
+    public Author createAuthor(@RequestBody Author authorObject) {
         Author author = authorRepo.findByName(authorObject.getName());
-        if (author != null){
+        if (author != null) {
             throw new InformationExistException("Author with this name exist already");
         } else {
             return authorRepo.save(authorObject);
         }
     }
+
     @GetMapping(path = "/author/{authorId}/")
-    public Optional<Author> getAuthor(@PathVariable Long authorId){
+    public Optional<Author> getAuthor(@PathVariable Long authorId) {
         return authorRepo.findById(authorId);
     }
+
+
     @GetMapping(path = "/author/") // author ONLY
-    public List<Author> getAuthors(){
+    public List<Author> getAuthors() {
         return authorRepo.findAll();
     }
-    //
-//    @PutMapping(path = "/author/{authorId}/")
-//    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject){
-//        return updateAuthor(authorId, authorObject);
-//    }
-//
-    //    @DeleteMapping(path = "author/{authorId}/")
+
+
+    @PutMapping(path = "/author/{authorId}/")
+    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
+        Optional<Author> author = authorRepo.findById(authorId);
+        if (author.isPresent()) {
+            if (authorObject.getName().equals(author.get().getName())) {
+                throw new InformationExistException("Author " + author.get().getName() + " already exists.");
+            } else {
+                Author updateAuthor = authorRepo.findById(authorId).get();
+                updateAuthor.setName(authorObject.getName());
+                updateAuthor.setDescription(authorObject.getDescription());
+                return authorRepo.save(updateAuthor);
+            }
+        } else {
+            throw new InformationNotFoundException("Author with id " + authorId + " not found");
+        }
+    }
+}
+
+//        @DeleteMapping(path = "author/{authorId}/")
 //    public Optional<Author> deleteAuthor(@PathVariable(value = "authorId") Long authorId){
 //        return deleteAuthor(authorId);
 //    }
-}
+//}

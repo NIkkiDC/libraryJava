@@ -9,3 +9,5 @@ import javax.persistence.Id;
 public interface AuthorRepo extends JpaRepository<Author, Long> {
     Author findByName(String name);
 }
+
+
