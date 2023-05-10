@@ -19,12 +19,17 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static jdk.internal.org.objectweb.asm.util.CheckClassAdapter.verify;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -82,6 +87,7 @@ class AuthorControllerTest {
 				.andExpect(result -> assertTrue(result.getResolvedException() instanceof InformationExistException))
 				.andExpect(result -> assertEquals("Author with this name exist already", result.getResolvedException().getMessage()));
 	}
+
 	@Test
 	void testGetAuthor() throws Exception {
 		// Arrange
@@ -97,6 +103,7 @@ class AuthorControllerTest {
 		Author actualAuthor = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), Author.class);
 		assertEquals(author, actualAuthor);
 	}
+
 	@Test
 	void testGetAuthors() throws Exception {
 		// Arrange
@@ -104,15 +111,53 @@ class AuthorControllerTest {
 		authors.add(new Author(1L, "John Smith", "description"));
 		authors.add(new Author(2L, "Jane Doe", "description2"));
 		when(authorRepo.findAll()).thenReturn(authors);
-
 		// Act
 		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/author/"))
 
 				.andExpect(status().isOk())
 				.andReturn();
-
 		// Assert
 		List<Author> actualAuthors = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), objectMapper.getTypeFactory().constructCollectionType(List.class, Author.class));
 		assertEquals(authors, actualAuthors);
+	}
+
+	@Test
+	void updateAuthorSuccessTest() throws Exception {
+		Long authorId = 1L;
+		String authorName = "John Doe";
+		String authorDescription = "Test description";
+		Author author = new Author(authorId, authorName, authorDescription);
+		String requestBody = "{\"name\":\"" + authorName + "\",\"description\":\"" + authorDescription + "\"}";
+		when(authorRepo.findById(authorId)).thenReturn(Optional.of(author));
+		when(author.getName()).thenReturn(authorName);
+		when(authorRepo.save(any(Author.class))).thenReturn(author);
+		mockMvc.perform(MockMvcRequestBuilders.put("/api/author/{authorId}/", authorId)
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(requestBody))
+				.andExpect(status().isOk())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.name").value(authorName))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.description").value(authorDescription));
+	}
+
+	@Test
+	void updateAuthorInformationExistExceptionTest() throws Exception {
+		Long authorId = 1L;
+		String authorName = "John Doe";
+		String authorDescription = "Test description";
+		Author author = new Author(authorId, authorName, authorDescription);
+
+		String requestBody = "{\"name\":\"" + authorName + "\",\"description\":\"" + authorDescription + "\"}";
+
+		when(authorRepo.findById(authorId)).thenReturn(Optional.of(author));
+		when(author.getName()).thenReturn(authorName);
+
+		Exception exception = mockMvc.perform(MockMvcRequestBuilders.put("/api/author/{authorId}/", authorId)
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(requestBody))
+				.andExpect(status().isConflict())
+				.andReturn().getResolvedException();
+
+		assert (exception instanceof InformationExistException);
+		assert (exception.getMessage().equals("Author " + authorName + "already exists."));
 	}
 }
