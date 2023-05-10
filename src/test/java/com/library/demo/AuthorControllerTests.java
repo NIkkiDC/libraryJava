@@ -82,5 +82,19 @@ class AuthorControllerTest {
 				.andExpect(result -> assertTrue(result.getResolvedException() instanceof InformationExistException))
 				.andExpect(result -> assertEquals("Author with this name exist already", result.getResolvedException().getMessage()));
 	}
+	@Test
+	void testGetAuthor() throws Exception {
+		// Arrange
+		Author author = new Author(1L, "John Smith", "description");
+		when(authorRepo.findById(author.getId())).thenReturn(Optional.of(author));
 
+		// Act
+		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/author/{authorId}/", author.getId()))
+				.andExpect(status().isOk())
+				.andReturn();
+
+		// Assert
+		Author actualAuthor = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), Author.class);
+		assertEquals(author, actualAuthor);
+	}
 }
