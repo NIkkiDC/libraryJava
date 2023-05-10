@@ -19,3 +19,4 @@ public class AuthorData implements CommandLineRunner {
     private void dataForAuthor () {
         if (authorRepo.count() == 0) {
             Author author1 = new Author("Toni Morrison", "Some description");
+            Author author2 = new Author("Alice Walker", "Some description");
