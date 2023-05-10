@@ -16,3 +16,6 @@ public class AuthorData implements CommandLineRunner {
     public void run(String... args) throws Exception {
         dataForAuthor();
     }
+    private void dataForAuthor () {
+        if (authorRepo.count() == 0) {
+            Author author1 = new Author("Toni Morrison", "Some description");
