@@ -1,6 +1,7 @@
 package com.library.demo.controller;
 
 import com.library.demo.model.Author;
+import com.library.demo.repository.AuthorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
