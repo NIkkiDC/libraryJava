@@ -97,4 +97,22 @@ class AuthorControllerTest {
 		Author actualAuthor = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), Author.class);
 		assertEquals(author, actualAuthor);
 	}
+	@Test
+	void testGetAuthors() throws Exception {
+		// Arrange
+		List<Author> authors = new ArrayList<>();
+		authors.add(new Author(1L, "John Smith", "description"));
+		authors.add(new Author(2L, "Jane Doe", "description2"));
+		when(authorRepo.findAll()).thenReturn(authors);
+
+		// Act
+		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/author/"))
+
+				.andExpect(status().isOk())
+				.andReturn();
+
+		// Assert
+		List<Author> actualAuthors = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), objectMapper.getTypeFactory().constructCollectionType(List.class, Author.class));
+		assertEquals(authors, actualAuthors);
+	}
 }
