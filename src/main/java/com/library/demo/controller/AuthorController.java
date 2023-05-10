@@ -66,10 +66,9 @@ public class AuthorController {
             throw new InformationNotFoundException("Author with id " + authorId + " not found");
         }
     }
-}
 
-//        @DeleteMapping(path = "author/{authorId}/")
-//    public Optional<Author> deleteAuthor(@PathVariable(value = "authorId") Long authorId){
-//        return deleteAuthor(authorId);
-//    }
-//}
+        @DeleteMapping(path = "author/{authorId}/")
+    public Optional<Author> deleteAuthor(@PathVariable(value = "authorId") Long authorId){
+        return deleteAuthor(authorId);
+    }
+}
