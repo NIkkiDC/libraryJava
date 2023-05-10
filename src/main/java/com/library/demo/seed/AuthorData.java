@@ -22,4 +22,6 @@ public class AuthorData implements CommandLineRunner {
             Author author2 = new Author("Alice Walker", "Some description");
             Author author3 = new Author("Octavia E. Butler", "Some description");
             Author author4 = new Author("Maya Angelou", "Some description");
+            Author author5 = new Author("Eric Thomas", "Some description");
+
 
