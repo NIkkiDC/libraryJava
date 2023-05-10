@@ -38,7 +38,13 @@ public class AuthorService {
             throw new InformationNotFoundException("Author with id " +authorId + " was not found");
         }
     }
-
-
-
+    public Optional<Author> deleteAuthor(Long authorId) throws InformationNotFoundException {
+        Optional<Author> author = authorRepo.findById(authorId);
+        if (author.isPresent()) {
+            authorRepo.deleteById(authorId);
+            return author;
+        } else {
+            throw new InformationNotFoundException("Author with id " + authorId + " not found");
+        }
+    }
 }
