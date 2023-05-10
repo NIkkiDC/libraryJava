@@ -29,6 +29,11 @@ public class AuthorController {
 
     @PostMapping(path = "/author/")
     public Author createAuthor(@RequestBody Author authorObject){
-
+        Author author = authorRepo.findByName(authorObject.getName());
+        if (author != null){
+            throw new InformationExistException("Author with this name exist already");
+        } else {
+            return authorRepo.save(authorObject);
+        }
     }
 }
