@@ -49,6 +49,14 @@ public class AuthorController {
         return authorRepo.findAll();
     }
 
+    /**
+     * This method is used to update the existing Author object in the database with new data, and
+     * cease the creation of a duplicate Author object with the same name
+     * @param authorId
+     * @param authorObject
+     * @return
+     */
+
     @PutMapping(path = "/author/{authorId}/")
     public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
         Optional<Author> author = authorRepo.findById(authorId);
