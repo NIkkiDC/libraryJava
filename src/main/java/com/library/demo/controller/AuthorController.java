@@ -67,8 +67,14 @@ public class AuthorController {
         }
     }
 
-        @DeleteMapping(path = "author/{authorId}/")
-    public Optional<Author> deleteAuthor(@PathVariable(value = "authorId") Long authorId){
-        return deleteAuthor(authorId);
+    @DeleteMapping(path = "author/{authorId}/")
+    public void deleteAuthor(@PathVariable(value = "authorId") Long authorId){
+        Optional<Author> author = authorRepo.findById(authorId);
+        if (author.isPresent()){
+            Author author_to_delete = author.get();
+            authorRepo.delete(author_to_delete);
+        } else {
+            throw new InformationExistException("Author with id "+ authorId +" not found");
+        }
     }
 }
