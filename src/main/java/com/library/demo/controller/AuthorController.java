@@ -43,6 +43,10 @@ public class AuthorController {
         return authorRepo.findById(authorId);
     }
 
+    /**
+     * This method is used to obtain ALL Author objects from a database and return it as a list
+     * @return
+     */
 
     @GetMapping(path = "/author/") // author ONLY
     public List<Author> getAuthors() {
