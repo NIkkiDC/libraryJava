@@ -195,4 +195,21 @@ class AuthorControllerTest {
 				.andExpect(MockMvcResultMatchers.jsonPath("$.message").value("Author with id " + authorId + " not found"));
 		verify(authorRepo, never()).delete(any(Author.class));
 	}
+
+	@Test
+	void deleteAuthor_informationExistException() throws Exception {
+		Long authorId = 1L;
+		Author authorToDelete = new Author();
+		authorToDelete.setId(authorId);
+
+		when(authorRepo.findById(authorId)).thenReturn(Optional.of(authorToDelete));
+		doThrow(InformationExistException.class).when(authorRepo).delete(authorToDelete);
+
+		mockMvc.perform(MockMvcRequestBuilders.delete("/api/author/{authorId}", authorId)
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isBadRequest())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.message").value("Author with id " + authorId + " cannot be deleted"));
+
+		verify(authorRepo, times(1)).delete(authorToDelete);
+	}
 }
