@@ -28,6 +28,14 @@ public class AuthorController {
         return "Hello World!";
     }
 
+    /**\
+     * This method is used to create a new Author object inside the database additionally it is
+     * ensuring that there are no duplicates based on the authors name. It will throw an exception
+     * if the author with the same name already exists.
+     * @param authorObject
+     * @return
+     */
+
     @PostMapping(path = "/author/")
     public Author createAuthor(@RequestBody Author authorObject) {
         Author author = authorRepo.findByName(authorObject.getName());
