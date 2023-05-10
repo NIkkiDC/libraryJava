@@ -49,6 +49,11 @@ class AuthorControllerTest {
 	@Mock
 	private AuthorRepo authorRepo;
 
+	Author Info_1 = new Author(1L,"Author1", "description");
+	Author Info_2 = new Author(2L,"Author2", "description");
+	Author Info_3 = new Author(1L,"Author3", "description");
+	Author Info_4 = new Author(2L,"Author4", "description");
+
 	@BeforeEach
 	void setUp() {
 		MockitoAnnotations.initMocks(this);
@@ -159,5 +164,41 @@ class AuthorControllerTest {
 
 		assert (exception instanceof InformationExistException);
 		assert (exception.getMessage().equals("Author " + authorName + "already exists."));
+	}
+
+	@Test
+	void updateAuthorNotFoundExceptionTest() throws Exception {
+		Long authorId = 1L;
+		String authorName = "John Doe";
+		String authorDescription = "Test description";
+
+
+		String requestBody = "{\"name\":\"" + authorName + "\",\"description\":\"" + authorDescription + "\"}";
+
+		when(authorRepo.findById(authorId)).thenReturn(Optional.empty());
+
+		Exception exception = mockMvc.perform(MockMvcRequestBuilders.put("/api/author/{authorId}/", authorId)
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(requestBody))
+				.andExpect(status().isNotFound())
+				.andReturn().getResolvedException();
+
+		assert (exception instanceof InformationExistException);
+		assert (exception.getMessage().equals("Author with id " + authorId + " not found"));
+	}
+
+
+	@Test
+	void deleteAuthor_notFound() throws Exception {
+		Long authorId = 1L;
+
+		when(authorRepo.findById(anyLong())).thenReturn(Optional.empty());
+
+		mockMvc.perform(MockMvcRequestBuilders.delete("/api/author/{authorId}", authorId)
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isNotFound())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.message").value("Author with id " + authorId + " not found"));
+
+		//verify(authorRepo, never()).delete(any(Author.class));
 	}
 }
