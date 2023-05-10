@@ -49,7 +49,6 @@ public class AuthorController {
         return authorRepo.findAll();
     }
 
-
     @PutMapping(path = "/author/{authorId}/")
     public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
         Optional<Author> author = authorRepo.findById(authorId);
@@ -66,6 +65,12 @@ public class AuthorController {
             throw new InformationNotFoundException("Author with id " + authorId + " not found");
         }
     }
+
+    /**
+     * This method is used to delete an existing Author object from the database
+     * and handle the instance where the object does not exist in the database
+     * @param authorId
+     */
 
     @DeleteMapping(path = "author/{authorId}/")
     public void deleteAuthor(@PathVariable(value = "authorId") Long authorId){
