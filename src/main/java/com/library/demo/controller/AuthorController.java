@@ -36,7 +36,7 @@ public class AuthorController {
             return authorRepo.save(authorObject);
         }
     }
-    @GetMapping(path = "/author/{authorId}/") // author ONLY
+    @GetMapping(path = "/author/{authorId}/")
     public Optional<Author> getAuthor(@PathVariable Long authorId){
         return authorRepo.findById(authorId);
     }
@@ -44,4 +44,14 @@ public class AuthorController {
     public List<Author> getAuthors(){
         return authorRepo.findAll();
     }
+    //
+//    @PutMapping(path = "/author/{authorId}/")
+//    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject){
+//        return updateAuthor(authorId, authorObject);
+//    }
+//
+    //    @DeleteMapping(path = "author/{authorId}/")
+//    public Optional<Author> deleteAuthor(@PathVariable(value = "authorId") Long authorId){
+//        return deleteAuthor(authorId);
+//    }
 }
