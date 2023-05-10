@@ -28,6 +28,11 @@ public class Author {
         this.description = description;
     }
 
+    public Author(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public Author() {
     }
 
@@ -52,4 +57,8 @@ public class Author {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    public List<Book> getBookList() {return bookList;}
+
+    public void setBookList(List<Book> bookList) {this.bookList = bookList;}
 }
