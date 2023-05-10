@@ -23,5 +23,13 @@ public class AuthorData implements CommandLineRunner {
             Author author3 = new Author("Octavia E. Butler", "Some description");
             Author author4 = new Author("Maya Angelou", "Some description");
             Author author5 = new Author("Eric Thomas", "Some description");
+            authorRepo.save(author1);
+            authorRepo.save(author2);
+            authorRepo.save(author3);
+            authorRepo.save(author4);
+            authorRepo.save(author5);
+        }
+    }
+}
 
 
