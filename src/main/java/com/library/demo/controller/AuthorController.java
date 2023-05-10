@@ -40,4 +40,8 @@ public class AuthorController {
     public Optional<Author> getAuthor(@PathVariable Long authorId){
         return authorRepo.findById(authorId);
     }
+    @GetMapping(path = "/author/") // author ONLY
+    public List<Author> getAuthors(){
+        return authorRepo.findAll();
+    }
 }
