@@ -1,5 +1,6 @@
 package com.library.demo.controller;
 
+import com.library.demo.exception.InformationExistException;
 import com.library.demo.model.Author;
 import com.library.demo.repository.AuthorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,10 @@ public class AuthorController {
     @GetMapping(path = "/hello-world/")
     public String helloWorld() {
         return "Hello World!";
+    }
+
+    @PostMapping(path = "/author/")
+    public Author createAuthor(@RequestBody Author authorObject){
+
     }
 }
