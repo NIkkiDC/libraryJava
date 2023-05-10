@@ -36,4 +36,8 @@ public class AuthorController {
             return authorRepo.save(authorObject);
         }
     }
+    @GetMapping(path = "/author/{authorId}/") // author ONLY
+    public Optional<Author> getAuthor(@PathVariable Long authorId){
+        return authorRepo.findById(authorId);
+    }
 }
