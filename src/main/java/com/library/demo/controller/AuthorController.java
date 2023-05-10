@@ -38,6 +38,12 @@ public class AuthorController {
         }
     }
 
+    /**
+     * This method is used to retrieve a single Author object from a database using the ID.
+     * @param authorId
+     * @return
+     */
+
     @GetMapping(path = "/author/{authorId}/")
     public Optional<Author> getAuthor(@PathVariable Long authorId) {
         return authorRepo.findById(authorId);
