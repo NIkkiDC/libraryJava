@@ -52,9 +52,20 @@ public class AuthorService {
         return authorRepo.findById(authorId);
     }
 
+    /**
+     * This method is created to return a list of ALL the Author object.
+     * @return
+     */
     public List<Author> getAuthors() {
         return authorRepo.findAll();
     }
+
+    /**
+     * This method is used to update the existing Author object in the database with new data
+     * @param authorId
+     * @param authorObject
+     * @return
+     */
 
     public Author updateAuthor(Long authorId, Author authorObject) {
         Optional<Author> author = authorRepo.findById(authorId);
@@ -71,6 +82,8 @@ public class AuthorService {
             throw new InformationNotFoundException("Author with id " + authorId + " not found");
         }
     }
+
+
     public void deleteAuthor(Long authorId){
         Optional<Author> author = authorRepo.findById(authorId);
         if (author.isPresent()){
