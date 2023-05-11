@@ -31,6 +31,7 @@ public class AuthorService {
      * @param authorObject
      * @return
      */
+
     public Author createAuthor(Author authorObject) {
         Author author = authorRepo.findByName(authorObject.getName());
         if (author != null) {
@@ -39,6 +40,13 @@ public class AuthorService {
             return authorRepo.save(authorObject);
         }
     }
+
+    /**
+     * This method is created to return the Optional object. Which will then allow the
+     * caller to handle the case where the author may or may not exist in the database
+     * @param authorId
+     * @return
+     */
 
     public Optional<Author> getAuthor(Long authorId) {
         return authorRepo.findById(authorId);
