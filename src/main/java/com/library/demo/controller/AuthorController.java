@@ -41,12 +41,7 @@ public class AuthorController {
 
     @PostMapping(path = "/author/")
     public Author createAuthor(@RequestBody Author authorObject) {
-        Author author = authorRepo.findByName(authorObject.getName());
-        if (author != null) {
-            throw new InformationExistException("Author with this name exist already");
-        } else {
-            return authorRepo.save(authorObject);
-        }
+      return authorService.createAuthor(authorObject);
     }
 
     /**
@@ -57,7 +52,7 @@ public class AuthorController {
 
     @GetMapping(path = "/author/{authorId}/")
     public Optional<Author> getAuthor(@PathVariable Long authorId) {
-        return authorRepo.findById(authorId);
+        return authorService.getAuthor(authorId);
     }
 
     /**
@@ -67,7 +62,7 @@ public class AuthorController {
 
     @GetMapping(path = "/author/") // author ONLY
     public List<Author> getAuthors() {
-        return authorRepo.findAll();
+        return authorService.getAuthors();
     }
 
     /**

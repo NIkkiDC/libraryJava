@@ -1,11 +1,15 @@
 package com.library.demo.service;
 
+import com.library.demo.exception.InformationExistException;
 import com.library.demo.exception.InformationNotFoundException;
 import com.library.demo.model.Author;
 import com.library.demo.repository.AuthorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,33 +26,22 @@ public class AuthorService {
         return "Hello World!";
     }
 
-//    public Optional<Author> getAuthorById(Long id){
-//        return authorRepo.findById(id);
-//    }
-//    public Author createAuthor(Author author){
-//        return authorRepo.save(author);
-//    }
-//
-//    public Optional<Author> updateAuthor(Long authorId, Author authorObject) throws InformationNotFoundException {
-//        Optional<Author> author = authorRepo.findById(authorId);
-//        if (author.isPresent()){
-//            author.get().setName(authorObject.getName());
-//            author.get().setDescription(authorObject.getDescription());
-//            authorRepo.save(author.get());
-//            return author;
-//        } else {
-//            throw new InformationNotFoundException("Author with id " +authorId + " was not found");
-//        }
-//    }
-//
-//
-//    public Optional<Author> deleteAuthor(Long authorId) throws InformationNotFoundException {
-//        Optional<Author> author = authorRepo.findById(authorId);
-//        if (author.isPresent()) {
-//            authorRepo.deleteById(authorId);
-//            return author;
-//        } else {
-//            throw new InformationNotFoundException("Author with id " + authorId + " not found");
-//        }
-//    }
+    public Author createAuthor(Author authorObject) {
+        Author author = authorRepo.findByName(authorObject.getName());
+        if (author != null) {
+            throw new InformationExistException("Author with this name exist already");
+        } else {
+            return authorRepo.save(authorObject);
+        }
+    }
+
+    public Optional<Author> getAuthor(Long authorId) {
+        return authorRepo.findById(authorId);
+    }
+
+    public List<Author> getAuthors() {
+        return authorRepo.findAll();
+    }
+
+
 }
