@@ -73,10 +73,10 @@ public class AuthorController {
      * @return
      */
 
-//    @PutMapping(path = "/author/{authorId}/")
-//    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
-//        return authorService.updateAuthor(authorId).setName(aut);
-//    }
+    @PutMapping(path = "/author/{authorId}/")
+    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
+        return authorService.updateAuthor(authorId, authorObject);
+    }
 
     /**
      * This method is used to delete an existing Author object from the database
