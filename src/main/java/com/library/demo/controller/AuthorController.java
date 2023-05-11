@@ -4,6 +4,7 @@ import com.library.demo.exception.InformationExistException;
 import com.library.demo.exception.InformationNotFoundException;
 import com.library.demo.model.Author;
 import com.library.demo.repository.AuthorRepo;
+import com.library.demo.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,19 +17,21 @@ public class AuthorController {
 
     private AuthorRepo authorRepo;
 
-
     @Autowired
     public void setAuthorRepo(AuthorRepo authorRepo) {
         this.authorRepo = authorRepo;
     }
 
+    @Autowired
+    private AuthorService authorService;
+
 
     @GetMapping(path = "/hello-world/")
     public String helloWorld() {
-        return "Hello World!";
+        return authorService.helloWorld();
     }
 
-    /**\
+    /**
      * This method is used to create a new Author object inside the database additionally it is
      * ensuring that there are no duplicates based on the authors name. It will throw an exception
      * if the author with the same name already exists.
