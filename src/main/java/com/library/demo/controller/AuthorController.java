@@ -35,17 +35,19 @@ public class AuthorController {
      * This method is used to create a new Author object inside the database additionally it is
      * ensuring that there are no duplicates based on the authors name. It will throw an exception
      * if the author with the same name already exists.
+     *
      * @param authorObject
      * @return
      */
 
     @PostMapping(path = "/author/")
     public Author createAuthor(@RequestBody Author authorObject) {
-      return authorService.createAuthor(authorObject);
+        return authorService.createAuthor(authorObject);
     }
 
     /**
      * This method is used to retrieve a single Author object from a database using the ID.
+     *
      * @param authorId
      * @return
      */
@@ -57,6 +59,7 @@ public class AuthorController {
 
     /**
      * This method is used to obtain ALL Author objects from a database and return it as a list
+     *
      * @return
      */
 
@@ -68,6 +71,7 @@ public class AuthorController {
     /**
      * This method is used to update the existing Author object in the database with new data, and
      * cease the creation of a duplicate Author object with the same name
+     *
      * @param authorId
      * @param authorObject
      * @return
@@ -81,17 +85,12 @@ public class AuthorController {
     /**
      * This method is used to delete an existing Author object from the database
      * and handle the instance where the object does not exist in the database
+     *
      * @param authorId
      */
 
     @DeleteMapping(path = "author/{authorId}/")
-    public void deleteAuthor(@PathVariable(value = "authorId") Long authorId){
-        Optional<Author> author = authorRepo.findById(authorId);
-        if (author.isPresent()){
-            Author author_to_delete = author.get();
-            authorRepo.delete(author_to_delete);
-        } else {
-            throw new InformationExistException("Author with id "+ authorId +" not found");
-        }
+    public void deleteAuthor(@PathVariable(value = "authorId") Long authorId) {
+        authorService.deleteAuthor(authorId);
     }
 }
