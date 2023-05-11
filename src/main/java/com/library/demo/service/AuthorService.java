@@ -24,6 +24,13 @@ public class AuthorService {
         return "Hello World!";
     }
 
+    /**
+     * If an Author with the same name does not exit it saves the author object to the
+     * database utilizing  the save() method os the authorRepo then will return the saved
+     * Author object
+     * @param authorObject
+     * @return
+     */
     public Author createAuthor(Author authorObject) {
         Author author = authorRepo.findByName(authorObject.getName());
         if (author != null) {
