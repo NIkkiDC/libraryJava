@@ -73,22 +73,10 @@ public class AuthorController {
      * @return
      */
 
-    @PutMapping(path = "/author/{authorId}/")
-    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
-        Optional<Author> author = authorRepo.findById(authorId);
-        if (author.isPresent()) {
-            if (authorObject.getName().equals(author.get().getName())) {
-                throw new InformationExistException("Author " + author.get().getName() + " already exists.");
-            } else {
-                Author updateAuthor = authorRepo.findById(authorId).get();
-                updateAuthor.setName(authorObject.getName());
-                updateAuthor.setDescription(authorObject.getDescription());
-                return authorRepo.save(updateAuthor);
-            }
-        } else {
-            throw new InformationNotFoundException("Author with id " + authorId + " not found");
-        }
-    }
+//    @PutMapping(path = "/author/{authorId}/")
+//    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
+//        return authorService.updateAuthor(authorId).setName(aut);
+//    }
 
     /**
      * This method is used to delete an existing Author object from the database
