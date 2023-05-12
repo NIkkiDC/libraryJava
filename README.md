@@ -5,7 +5,10 @@
 <sub>This is a subscript text</sub>
 This site was built using [GitHub Pages](https://pages.github.com/).
 
+##Description of The Project 
+This project aims to build a monolithic backend using Spring Boot and its modules in order to create a web API using a monolithic approach. The database you are going to use will be h2 in memory database, and the application you are going to be developing will be running on the Tomcat server.
 
+This application aims to 
 
 Photo of GET author test
 <img width="792" alt="Screenshot 2023-05-09 at 8 34 41 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/07e56737-3cad-45e2-8451-fbe87a995dad">
