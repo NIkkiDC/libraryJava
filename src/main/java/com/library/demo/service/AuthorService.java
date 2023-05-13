@@ -33,23 +33,25 @@ public class AuthorService {
      */
 
     public Author createAuthor(Author authorObject) {
-        Author author = authorRepo.findByName(authorObject.getName());
-        if (author != null) {
-            throw new InformationExistException("Author with this name exist already");
-        } else {
+        System.out.println(authorObject.getBookList());
+//        Author author = authorRepo.findByName(authorObject.getName());
+//        if (author != null) {
+//            throw new InformationExistException("Author with this name exist already");
+//        } else {
             return authorRepo.save(authorObject);
-        }
+//        }
     }
 
     /**
      * This method is created to return the Optional object. Which will then allow the
-     * caller to handle the case where the author may or may not exist in the database
+     *
      * @param authorId
      * @return
      */
 
-    public Optional<Author> getAuthor(Long authorId) {
-        return authorRepo.findById(authorId);
+    public Author getAuthor(Long authorId) {
+        return authorRepo.findById(authorId).get();
+
     }
 
     /**

@@ -27,7 +27,7 @@ public class Book {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.isbn = isbn;
+        this.isbn = isbn; // long book number
     }
 
     public Book(){

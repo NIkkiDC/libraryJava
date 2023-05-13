@@ -41,7 +41,7 @@ public class AuthorController {
      */
 
     @PostMapping(path = "/author/")
-    public Author createAuthor(@RequestBody Author authorObject) {
+    public Author createAuthor(@RequestBody Author authorObject, @PathVariable Long book) {
         return authorService.createAuthor(authorObject);
     }
 
@@ -52,8 +52,9 @@ public class AuthorController {
      * @return
      */
 
+
     @GetMapping(path = "/author/{authorId}/")
-    public Optional<Author> getAuthor(@PathVariable Long authorId) {
+    public Author getAuthor(@PathVariable Long authorId) {
         return authorService.getAuthor(authorId);
     }
 
@@ -69,7 +70,8 @@ public class AuthorController {
     }
 
     /**
-     * This method is used to update the existing Author object in the database with new data, and
+     *
+     * and
      * cease the creation of a duplicate Author object with the same name
      *
      * @param authorId
