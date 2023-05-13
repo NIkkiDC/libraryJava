@@ -1,14 +1,48 @@
-# Library Java Project 
-# A first-level heading
-## A second-level heading
-### smaller but bold 
-<sub>This is a subscript text</sub>
-This site was built using [GitHub Pages](https://pages.github.com/).
+# 👩🏿‍🏫Famous Black Authors 
 
-##Description of The Project 
-This project aims to build a monolithic backend using Spring Boot and its modules in order to create a web API using a monolithic approach. The database you are going to use will be h2 in memory database, and the application you are going to be developing will be running on the Tomcat server.
+<br>
 
-This application aims to 
+## 🧾 Table Of Contents 
+* Project Description 
+* Tools & Technoilogies 
+* Project Aproach 
+* ERD Diagram
+* Endpoint Mappings (controller/service controller) (delete this) this is to help u recall)
+* Kanban Project Plan
+* Hurdles
+* Installation Instructions 
+* Credits 
+
+
+## 📇Project Description
+
+This project was created to find famous Black authors that often go un-noticed. In honor of Juneteenth you don’t have to google Black authors to support because they will all be implemented here. This project was created with a monolithic approach utilizing spring boot and its modules. 
+<br>
+
+## 🛠️Tools & Tech 
+* JAVA
+* GITHUB
+* POSTMAN
+* SPRINGBOOT
+* APPLE NOTES
+* INTELLIJ
+* H2
+
+<br>
+
+## 📑Project Approach 
+project approach can be the user stories 
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah
+USER STORIES 
+blah blah blah blah blah blah blah blah blah blah blah blah
+blah blah blah blah blah blah blah blah blah blah blah blah
+blah blah blah blah blah blah blah blah blah blah blah blah
+
+## ERD Diagram
+
+<img width="806" alt="Screenshot 2023-05-12 at 4 13 08 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/bf247c17-4b1d-4961-9187-7a56dce4dd36">
+
+
 
 Photo of GET author test
 <img width="792" alt="Screenshot 2023-05-09 at 8 34 41 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/07e56737-3cad-45e2-8451-fbe87a995dad">
@@ -28,3 +62,9 @@ process of how I was organizing the project
 down below is the test of obtaining all authors. Their first and last name is illustrated, a discription about them, and an ID number 
 
 <img width="1080" alt="Screenshot 2023-05-09 at 8 36 23 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/22ca1a0f-6428-4f9a-8787-4df229f418c8">
+
+
+### smaller but bold 
+
+This site was built using [GitHub Pages](https://pages.github.com/).
+<sub>Created by Dominique Collins </sub>
