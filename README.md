@@ -7,9 +7,8 @@
 * Tools & Technoilogies 
 * Kanban Project Plan <sub> {Project Aproach} </sub>
 * User Stories 
-* ERD Diagram
-* Endpoint Mappings (controller/service controller) (delete this) this is to help u recall)
-* Kanban Project Plan
+* Endpoint Mappings
+* ERD Diagram 
 * Hurdles
 * Installation Instructions 
 * Credits 
