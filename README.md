@@ -5,7 +5,7 @@
 ## 🧾 Table Of Contents 
 * Project Description 
 * Tools & Technoilogies 
-* Project Aproach 
+* Kanban Project Plan <sub> {Project Aproach} </sub>
 * ERD Diagram
 * Endpoint Mappings (controller/service controller) (delete this) this is to help u recall)
 * Kanban Project Plan
