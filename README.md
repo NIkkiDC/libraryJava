@@ -43,6 +43,17 @@ blah blah blah blah blah blah blah blah blah blah blah blah
 <img width="806" alt="Screenshot 2023-05-12 at 4 13 08 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/bf247c17-4b1d-4961-9187-7a56dce4dd36">
 
 
+| Request Type | URL                   | Functionality                         | Access | 
+|--------------|-----------------------|---------------------------------------|--------|
+| POST         | /api/author/          | Create author                         | Public |
+| GET          | /api/author/1/        | Get single author                     | Public |
+| PUT          | /api/author/1/        | Update single author                  | Public |
+| DELETE       | /api/author/1/        | Delete single author                  | Public |
+| POST         | /api/author/1/book/   | Creating a book for a single author   | Public |
+| GET          | /api/author/1/book/1/ | Get a book belongs a single author    | Public |
+| PUT          | /api/author/1/book/1/ | Update a book belongs a single author | Public |
+| DELETE       | /api/author/1/book/1/ | Delete a book belongs a single author | Public |
+
 
 Photo of GET author test
 <img width="792" alt="Screenshot 2023-05-09 at 8 34 41 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/07e56737-3cad-45e2-8451-fbe87a995dad">
