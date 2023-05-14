@@ -26,13 +26,16 @@ This project was created to find famous Black authors that often go un-noticed. 
 * SPRINGBOOT
 * APPLE NOTES
 * INTELLIJ
+* ERD Tool
 * H2
+* ERD Tool
 
 <br>
 
 ## 📑Project Approach 
 project approach can be the user stories 
 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah
+
 USER STORIES 
 blah blah blah blah blah blah blah blah blah blah blah blah
 blah blah blah blah blah blah blah blah blah blah blah blah
