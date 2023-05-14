@@ -18,11 +18,21 @@ public class BookData  implements CommandLineRunner {
 
     private void dataForBook() {
         if (bookRepo.count() == 0) {
-            Book book1 = new Book(1L, "Freat Gatsby", "Folk tale", "122122122");
-            Book book2 = new Book(2L, "Freat Gatsby", "Folk tale", "122122122");
-            Book book3 = new Book(3L, "Freat Gatsby", "Folk tale", "122122122");
-            Book book4 = new Book(4L, "Freat Gatsby", "Folk tale", "122122122");
-            Book book5 = new Book(5L, "Freat Gatsby", "Folk tale", "122122122");
+            Book book1 = new Book(1L, "The Bluest Eye",
+                    "Novel/ Fiction",
+                    "0452282195");
+            Book book2 = new Book(2L, "The Color Purple",
+                    "Epistolary novel",
+                    " 0671727796");
+            Book book3 = new Book(3L, "Kindred",
+                    "Novel",
+                    "1538732181");
+            Book book4 = new Book(4L, "I Know Why The Caged Bird Sings",
+                    "Autobiography",
+                    "0553122525");
+            Book book5 = new Book(5L, "You Owe You",
+                    "Motivational",
+                    "0593234987");
 
             bookRepo.save(book1);
             bookRepo.save(book2);

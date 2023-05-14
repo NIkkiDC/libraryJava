@@ -21,7 +21,12 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
-
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+    public Author getAuthor(){
+        return author;
+    }
 
     public Book(Long id, String name, String description, String isbn) {
         this.id = id;
