@@ -3,8 +3,10 @@ package com.library.demo.controller;
 import com.library.demo.exception.InformationExistException;
 import com.library.demo.exception.InformationNotFoundException;
 import com.library.demo.model.Author;
+import com.library.demo.model.Book;
 import com.library.demo.repository.AuthorRepo;
 import com.library.demo.service.AuthorService;
+import com.library.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,10 +27,13 @@ public class AuthorController {
     @Autowired
     private AuthorService authorService;
 
+    @Autowired
+    private BookService bookService;
 
-    @GetMapping(path = "/hello-world/")
+
+    @GetMapping(path = "/hello-world")
     public String helloWorld() {
-        return authorService.helloWorld();
+        return "helloWorld";
     }
 
     /**
@@ -41,7 +46,7 @@ public class AuthorController {
      */
 
     @PostMapping(path = "/author/")
-    public Author createAuthor(@RequestBody Author authorObject, @PathVariable Long book) {
+    public Author createAuthor(@RequestBody Author authorObject) {
         return authorService.createAuthor(authorObject);
     }
 
@@ -51,7 +56,6 @@ public class AuthorController {
      * @param authorId
      * @return
      */
-
 
     @GetMapping(path = "/author/{authorId}/")
     public Author getAuthor(@PathVariable Long authorId) {
@@ -70,8 +74,7 @@ public class AuthorController {
     }
 
     /**
-     *
-     * and
+     * This method is used to update the existing Author object in the database with new data, and
      * cease the creation of a duplicate Author object with the same name
      *
      * @param authorId
@@ -80,8 +83,19 @@ public class AuthorController {
      */
 
     @PutMapping(path = "/author/{authorId}/")
-    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject) {
-        return authorService.updateAuthor(authorId, authorObject);
+    public Author updateAuthor(@PathVariable Long authorId, @RequestBody Author authorObject){
+        Optional<Author> author = authorRepo.findById(authorId);
+        if (author.isPresent()){
+            Author updateAuthor = authorRepo.findById(authorId).get();
+            updateAuthor.setName(authorObject.getName());
+            updateAuthor.setDescription(authorObject.getDescription());
+            return authorRepo.save(updateAuthor);
+
+        }
+        else {
+            throw new InformationExistException("Author with id "+authorId+" not found");
+        }
+
     }
 
     /**
@@ -92,7 +106,29 @@ public class AuthorController {
      */
 
     @DeleteMapping(path = "author/{authorId}/")
-    public void deleteAuthor(@PathVariable(value = "authorId") Long authorId) {
-        authorService.deleteAuthor(authorId);
+    public void deleteAuthor(@PathVariable(value = "authorId") Long authorId){
+        Optional<Author> author = authorRepo.findById(authorId);
+        if (author.isPresent()){
+
+            Author author_to_delete = author.get();
+            authorRepo.delete(author_to_delete);
+        }
+        else {
+            throw new InformationExistException("Author with id "+authorId+" not found");
+        }
+    }
+
+
+    @PostMapping("author/{authorId}/books/")
+    public Book createBookForAuthor(@PathVariable("authorId") Long authorId, @RequestBody Book book){
+        Optional<Author> author = authorRepo.findById(authorId);
+        if (author.isPresent()){
+            Author authorToAddBook = author.get();
+            book.setAuthor(authorToAddBook);
+            return bookService.save(book);
+        }
+        else {
+            throw new InformationExistException("Author with id "+authorId+" not found");
+        }
     }
 }
