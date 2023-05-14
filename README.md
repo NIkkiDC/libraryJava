@@ -118,7 +118,7 @@ Copy and paste the code below into your pom.xml file. Once copied right mouse cl
 
 <br>
 
-## Reflections / Hurdles 
+## Reflections / Hurdles / Wins 
 One thing I would do differently if I was given another project with a similar outcome is to really spend time learning, and familiarizing myself with the material I am not comfortable with FIRST. During the project there were a few concepts that were hazy to me, but I was able to search for different methods/ways to properly implement those things into my project successfully. I was learning as I went through with the project which was great, but I feel like that took up a lot of my time, and I wasn’t as confident.
 
 
