@@ -136,6 +136,7 @@ I learned a lot about how to properly utilize MVC. I know it’s something simpl
 
 ## 🔖 Credits 
 Thank you so much to Wanda, she helped me understand what I was doing better, and she helped me refactor my project where it needed refactoring. Wanda also was sure to explain her thought process on any refactoring she wanted me to implment. 
+
 Thank you to group RC {Rachel & Clair} They were the support system that I needed during this project.
 
 <br>
