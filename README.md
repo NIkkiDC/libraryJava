@@ -116,6 +116,20 @@ Copy and paste the code below into your pom.xml file. Once copied right mouse cl
 
 <img width="1047" alt="Screenshot 2023-05-14 at 11 08 33 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/63f284f8-27e5-423f-9d77-ccf0442507f1">
 
+<br>
+
+## Reflections / Hurdles 
+One thing I would do differently if I was given another project with a similar outcome is to really spend time learning, and familiarizing myself with the material I am not comfortable with FIRST. During the project there were a few concepts that were hazy to me, but I was able to search for different methods/ways to properly implement those things into my project successfully. I was learning as I went through with the project which was great, but I feel like that took up a lot of my time, and I wasn’t as confident.
+
+
+I am most proud of the fact that I took this project as a learning experience. Anything I was not comfortable with I spent more time on. I asked more questions about it, and diligently completed research to successfully find the answer. I was more comfortable with the cucumber version of testing, so I went ahead and completed the testing utilizing the MVC. After completing so many test cases utilizing the MVC approach I grew more comfortable with the material.
+
+
+One thing I would do next is implement a synopsis of each book.So if views are not familiar with the book titles the have more information to gauge their selection. I would also implement a small auto-biography of each author. Just some general facts of where they are from, when they began writing, and when was their first publish.
+
+
+I learned a lot about how to properly utilize MVC. I know it’s something simple to most, but for me I had a tuff time properly obtaining, and inserting information in Postman. During this project I got the opportunity to successfully test all of my endpoints. {Before it was successful, I had a lot of hiccups} This is not tech related, but I learned a lot about 60% of these authors. I had never heard of some of these authors before, but I have read some of their books, I just never connected the author with the book. It was fun to actually learn some non-tech information doing this project as well.
+
 
 
 <br>
