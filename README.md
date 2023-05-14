@@ -55,17 +55,16 @@ blah blah blah blah blah blah blah blah blah blah blah blah
 | DELETE       | /api/author/1/book/1/ | Delete a book belongs a single author | Public |
 
 
+Photo of POST Authors (adding a book with book info, that was written by Toni Morission
+<img width="829" alt="Screenshot 2023-05-14 at 9 49 56 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/04c860cf-1a95-46db-b601-d643d301520e">
+ 
+
+
+
 Photo of GET all books 
 <img width="850" alt="Screenshot 2023-05-14 at 9 16 11 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/62c978af-502f-484d-af82-987ec0ea9fed">
 
 
-
-photo of with ID 
-<img width="820" alt="Screenshot 2023-05-10 at 7 56 14 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/e7e5d5a6-6ada-4074-b69b-c47c3b122377">
-
-
-photo of POST create author test 
-<img width="775" alt="Screenshot 2023-05-09 at 8 35 04 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/588b1f04-372c-4e0d-be4a-13c1a0f6cc51">
 
 
 process of how I was organizing the project 
