@@ -112,7 +112,7 @@ Copy and paste the code below into your pom.xml file. Once copied right mouse cl
  
  <br>
 
-down below is the test of obtaining all authors. Their first and last name is illustrated, a discription about them, and an ID number 
+## H2 
 
 <img width="1047" alt="Screenshot 2023-05-14 at 11 08 33 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/63f284f8-27e5-423f-9d77-ccf0442507f1">
 
