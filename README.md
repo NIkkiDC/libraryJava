@@ -55,8 +55,9 @@ blah blah blah blah blah blah blah blah blah blah blah blah
 | DELETE       | /api/author/1/book/1/ | Delete a book belongs a single author | Public |
 
 
-Photo of GET author test
-<img width="792" alt="Screenshot 2023-05-09 at 8 34 41 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/07e56737-3cad-45e2-8451-fbe87a995dad">
+Photo of GET all books 
+<img width="850" alt="Screenshot 2023-05-14 at 9 16 11 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/62c978af-502f-484d-af82-987ec0ea9fed">
+
 
 
 photo of with ID 
