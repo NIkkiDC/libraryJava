@@ -1,4 +1,4 @@
-# 👩🏿‍🏫Famous Black Authors 
+# 👩🏿‍🏫 Famous Black Authors 
 
 <br>
 
@@ -14,12 +14,12 @@
 * Credits 
 
 
-## 📇Project Description
+## 📇 Project Description
 
 This project was created to find famous Black authors that often go un-noticed. In honor of Juneteenth you don’t have to google Black authors to support because they will all be implemented here. This project was created with a monolithic approach utilizing spring boot and its modules. 
 <br>
 
-## 🛠️Tools & Tech 
+## 🛠️ Tools & Tech 
 * JAVA
 * GITHUB
 * POSTMAN
@@ -32,7 +32,14 @@ This project was created to find famous Black authors that often go un-noticed. 
 
 <br>
 
-## 📑Project Approach 
+## 📊 Kanban Project Plan 
+
+<img width="1449" alt="Screenshot 2023-05-11 at 11 37 03 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/b910412c-d7a9-42ef-a17d-8dfcc2e157e1">
+
+<br>
+
+## 📝 User Stories 
+
 As a user I should be able to create an Author in the database.
 
 As a user I should be able to look up a single author.
@@ -55,13 +62,7 @@ As a user I should not be allowed to make duplicate entries of authors. If I sho
 
 <br>
 
-## ERD Diagram
-
-<img width="806" alt="Screenshot 2023-05-12 at 4 13 08 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/bf247c17-4b1d-4961-9187-7a56dce4dd36">
-
-<br>
-
-## Endpoint Mappings
+## 🔚🗺️ Endpoint Mappings
 
 
 | Request Type | URL                   | Functionality                         | Access | 
@@ -76,15 +77,14 @@ As a user I should not be allowed to make duplicate entries of authors. If I sho
 | DELETE       | /api/author/1/book/1/ | Delete a book belongs a single author | Public |
 
 
+## 📰 ERD Diagram
+
+<img width="806" alt="Screenshot 2023-05-12 at 4 13 08 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/bf247c17-4b1d-4961-9187-7a56dce4dd36">
+
+
 <br>
 
-## Kanban Project Plan 
-
-<img width="1449" alt="Screenshot 2023-05-11 at 11 37 03 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/b910412c-d7a9-42ef-a17d-8dfcc2e157e1">
-
-<br>
-
-## Installation Instructions 
+## 📚 Installation Instructions 
 
 Copy and paste the code below into your pom.xml file. Once copied right mouse click on your pom.xml file and select Maven and then Reload project. This will install the dependecnies.
 
@@ -120,7 +120,7 @@ down below is the test of obtaining all authors. Their first and last name is il
 
 <br>
 
-## Credits 
+## 🪷 Credits 
 Thank you so much to Wanda, she helped me understand what I was doing better, and she helped me refactor my project where it needed refactoring. Wanda also was sure to explain her thought process on any refactoring she wanted me to implment. 
 Thank you to group RC {Rachel & Clair} They were the support system that I needed during this project.
 
