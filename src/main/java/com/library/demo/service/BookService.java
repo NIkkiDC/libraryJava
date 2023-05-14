@@ -14,12 +14,20 @@ public class BookService {
     @Autowired
     private BookRepo bookRepo;
 
+    public Book save(Book book){
+        return bookRepo.save(book);
+    }
+
     public List<Book> getAllBooks() {
         return bookRepo.findAll();
     }
 
     public Optional<Book> findById(Long id){
         return bookRepo.findById(id);
+    }
+
+    public void delete(Book bookToDelete) {
+        this.bookRepo.delete(bookToDelete);
     }
 }
 

@@ -12,9 +12,6 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class BookController {
 
-//    public Category updateCategory(@PathVariable Long categoryId, @RequestBody Category categoryObject) {
-//        return categoryService.updateCategory(categoryId, categoryObject);
-//    }
 
     @Autowired
     private BookService bookService;
@@ -23,21 +20,32 @@ public class BookController {
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
+    @PutMapping(path = "/books/{bookId}/")
+    public Book updateBook(@PathVariable Long bookId, @RequestBody Book book) {
 
-//    @PutMapping(path = "/books/{bookId}/")
-//    public Book updateBook(@PathVariable Long bookId, @RequestBody Book book) {
-//
-//        Optional<Book> book1 = bookService.findById(bookId);
-//
-//        if (book1.isPresent()) {
-//            Book book2 = book1.get();
-//            book2.setName(book.getName());
-//            book2.setDescription(book.getDescription());
-//            book2.setIsbn(book.getIsbn());
-//            return bookService.save(book2);
-//        } else {
-//            throw new InformationExistException("Book with id " + bookId + " not found");
-//        }
-//    }
-}
+        Optional<Book> book1 = bookService.findById(bookId);
+
+        if (book1.isPresent()) {
+            Book book2 = book1.get();
+            book2.setName(book.getName());
+            book2.setDescription(book.getDescription());
+            book2.setIsbn(book.getIsbn());
+            return bookService.save(book2);
+        } else {
+            throw new InformationExistException("Book with id " + bookId + " not found");
+        }
+    }
+        @DeleteMapping(path = "books/{bookId}/")
+        public void deleteBook(@PathVariable(value = "bookId") Long bookId){
+            Optional<Book> book = bookService.findById(bookId);
+            if (book.isPresent()){
+
+                Book BookToDelete = book.get();
+                bookService.delete(BookToDelete);
+            }
+            else {
+                throw new InformationExistException("Book with id "+bookId+" not found");
+            }
+        }
+    }
 
