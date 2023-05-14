@@ -53,17 +53,7 @@ As a user, Im able to get a list of authors from my database so I can find diffe
 
 As a user I should not be allowed to make duplicate entries of authors. If I should make a duplicate entry of an author an error should immediately come across the screen, so I don’t input that duplicate. 
 
-
-USER STORIES 
-As a user, I'm able to get one single author.
-As a user, I'm able to get one single author illustrating the name of the book, and the description with the isbn number.
-As a user, Im able to get a list of authors from my database so I can find different books from the authors 
-
-Acceptance Criteria 
-
-Return error message when the author already exist in the data base.
-Should return a list of all Authors in the database 
-
+<br>
 
 ## ERD Diagram
 
