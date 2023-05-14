@@ -62,7 +62,7 @@ As a user I should not be allowed to make duplicate entries of authors. If I sho
 
 <br>
 
-## 🔚🗺️ Endpoint Mappings
+## 🗺️ Endpoint Mappings
 
 
 | Request Type | URL                   | Functionality                         | Access | 
@@ -120,7 +120,7 @@ down below is the test of obtaining all authors. Their first and last name is il
 
 <br>
 
-## 🪷 Credits 
+## 🔖 Credits 
 Thank you so much to Wanda, she helped me understand what I was doing better, and she helped me refactor my project where it needed refactoring. Wanda also was sure to explain her thought process on any refactoring she wanted me to implment. 
 Thank you to group RC {Rachel & Clair} They were the support system that I needed during this project.
 
