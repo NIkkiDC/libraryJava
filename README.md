@@ -74,15 +74,23 @@ Photo of GET all books
 <img width="850" alt="Screenshot 2023-05-14 at 9 16 11 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/62c978af-502f-484d-af82-987ec0ea9fed">
 
 
+<br>
 
+## Kanban Project Plan 
 
-process of how I was organizing the project 
 <img width="1449" alt="Screenshot 2023-05-11 at 11 37 03 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/b910412c-d7a9-42ef-a17d-8dfcc2e157e1">
 
 down below is the test of obtaining all authors. Their first and last name is illustrated, a discription about them, and an ID number 
 
 <img width="1080" alt="Screenshot 2023-05-09 at 8 36 23 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/22ca1a0f-6428-4f9a-8787-4df229f418c8">
 
+<br>
+
+## Credits 
+Thank you so much to Wanda, she helped me understand what I was doing better, and she helped me refactor my project where it needed refactoring. Wanda also was sure to explain her thought process on any refactoring she wanted me to implment. 
+Thank you to group RC {Rachel & Clair} They were the support system that I needed during this project.
+
+<br>
 
 ### smaller but bold 
 
