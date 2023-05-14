@@ -59,6 +59,8 @@ Photo of POST Authors (adding a book with book info, that was written by Toni Mo
 <img width="829" alt="Screenshot 2023-05-14 at 9 49 56 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/04c860cf-1a95-46db-b601-d643d301520e">
  
 
+Photo of book list updated bc you created a new book in the data base
+<img width="839" alt="Screenshot 2023-05-14 at 9 51 17 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/0745d81e-abb4-43db-a921-fc40fded43db">
 
 
 Photo of GET all books 
