@@ -110,7 +110,9 @@ Photo of GET all books
 
 down below is the test of obtaining all authors. Their first and last name is illustrated, a discription about them, and an ID number 
 
-<img width="1080" alt="Screenshot 2023-05-09 at 8 36 23 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/22ca1a0f-6428-4f9a-8787-4df229f418c8">
+<img width="1047" alt="Screenshot 2023-05-14 at 11 08 33 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/63f284f8-27e5-423f-9d77-ccf0442507f1">
+
+
 
 <br>
 
