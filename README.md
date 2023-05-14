@@ -45,6 +45,10 @@ blah blah blah blah blah blah blah blah blah blah blah blah
 
 <img width="806" alt="Screenshot 2023-05-12 at 4 13 08 PM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/bf247c17-4b1d-4961-9187-7a56dce4dd36">
 
+<br>
+
+## Endpoint Mappings
+
 
 | Request Type | URL                   | Functionality                         | Access | 
 |--------------|-----------------------|---------------------------------------|--------|
