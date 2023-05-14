@@ -76,18 +76,6 @@ As a user I should not be allowed to make duplicate entries of authors. If I sho
 | DELETE       | /api/author/1/book/1/ | Delete a book belongs a single author | Public |
 
 
-Photo of POST Authors (adding a book with book info, that was written by Toni Morission
-<img width="829" alt="Screenshot 2023-05-14 at 9 49 56 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/04c860cf-1a95-46db-b601-d643d301520e">
- 
-
-Photo of book list updated bc you created a new book in the data base
-<img width="839" alt="Screenshot 2023-05-14 at 9 51 17 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/0745d81e-abb4-43db-a921-fc40fded43db">
-
-
-Photo of GET all books 
-<img width="850" alt="Screenshot 2023-05-14 at 9 16 11 AM" src="https://github.com/NIkkiDC/libraryJava/assets/97572760/62c978af-502f-484d-af82-987ec0ea9fed">
-
-
 <br>
 
 ## Kanban Project Plan 
@@ -97,6 +85,8 @@ Photo of GET all books
 <br>
 
 ## Installation Instructions 
+
+Copy and paste the code below into your pom.xml file. Once copied right mouse click on your pom.xml file and select Maven and then Reload project. This will install the dependecnies.
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
