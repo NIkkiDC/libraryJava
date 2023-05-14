@@ -34,14 +34,23 @@ This project was created to find famous Black authors that often go un-noticed. 
 
 ## 📑Project Approach 
 As a user I should be able to create an Author in the database.
+
 As a user I should be able to look up a single author.
+
 As a user I should be able to update a single author.
+
 As a user I should be able to delete a single author.
+
 As a user I should be able to create a book for a single author.
+
 As a user I should be able to update a book that belongs to a single author.
+
 As a user I should be able to delete a book that belongs to a single author.
+
 As a user I should be able to delete a single author.
+
 As a user, Im able to get a list of authors from my database so I can find different books from the authors.
+
 As a user I should not be allowed to make duplicate entries of authors. If I should make a duplicate entry of an author an error should immediately come across the screen, so I don’t input that duplicate. 
 
 
