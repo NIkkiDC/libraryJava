@@ -143,5 +143,5 @@ Thank you to group RC {Rachel & Clair} They were the support system that I neede
 
 ### smaller but bold 
 
-This site was built using [GitHub Pages](https://pages.github.com/).
+
 <sub>Created by Dominique Collins </sub>
