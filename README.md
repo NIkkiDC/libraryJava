@@ -141,7 +141,6 @@ Thank you to group RC {Rachel & Clair} They were the support system that I neede
 
 <br>
 
-### smaller but bold 
 
 
 <sub>Created by Dominique Collins </sub>
