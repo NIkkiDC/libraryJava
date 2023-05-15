@@ -16,7 +16,7 @@
 
 ## 📇 Project Description
 
-This project was created to find famous Black authors that often go un-noticed. In honor of Juneteenth you don’t have to google Black authors to support because they will all be implemented here. This project was created with a monolithic approach utilizing spring boot and its modules. 
+This project was created to find famous Black authors that often go un-noticed. In honor of Juneteenth we would like everyone around the word to add their famous black authors. This project was created with a monolithic approach utilizing spring boot and its modules. 
 <br>
 
 ## 🛠️ Tools & Tech 
